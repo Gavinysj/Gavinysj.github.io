@@ -93,16 +93,24 @@
 
 
 
-<meta name="description" content="study share">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Gavin&#39;s Blog">
-<meta property="og:url" content="https://gavinysj.github.io/index.html">
+<meta name="description" content="FLV封装其特点在于支持实时观看，即无需下载整个文件，也可以通过接受视频中间的Tag数据来解析播放。另外一个注意点: FLV中通过Tag区分不同的流，不像ts同一种类型支持多个流，FLV每种Tag最多存在一个流.详细的文件格式介绍见下文: ##FLV文件头格式  如图   说明  前三个字节是固定值，即文件标识“FLV” Version: FLV格式的版本 TypeFlagsReserved: 固">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FLV封装格式简介">
+<meta property="og:url" content="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/index.html">
 <meta property="og:site_name" content="Gavin&#39;s Blog">
-<meta property="og:description" content="study share">
+<meta property="og:description" content="FLV封装其特点在于支持实时观看，即无需下载整个文件，也可以通过接受视频中间的Tag数据来解析播放。另外一个注意点: FLV中通过Tag区分不同的流，不像ts同一种类型支持多个流，FLV每种Tag最多存在一个流.详细的文件格式介绍见下文: ##FLV文件头格式  如图   说明  前三个字节是固定值，即文件标识“FLV” Version: FLV格式的版本 TypeFlagsReserved: 固">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/FLVHeader.png">
+<meta property="og:image" content="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/FLVBody.png">
+<meta property="og:image" content="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/FLVTag.png">
+<meta property="og:image" content="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/AudioTag.png">
+<meta property="og:image" content="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/VideoTag.png">
+<meta property="og:image" content="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/ScriptTagBody.png">
+<meta property="og:updated_time" content="2017-07-22T15:02:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gavin&#39;s Blog">
-<meta name="twitter:description" content="study share">
+<meta name="twitter:title" content="FLV封装格式简介">
+<meta name="twitter:description" content="FLV封装其特点在于支持实时观看，即无需下载整个文件，也可以通过接受视频中间的Tag数据来解析播放。另外一个注意点: FLV中通过Tag区分不同的流，不像ts同一种类型支持多个流，FLV每种Tag最多存在一个流.详细的文件格式介绍见下文: ##FLV文件头格式  如图   说明  前三个字节是固定值，即文件标识“FLV” Version: FLV格式的版本 TypeFlagsReserved: 固">
+<meta name="twitter:image" content="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/FLVHeader.png">
 
 
 
@@ -130,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="https://gavinysj.github.io/"/>
+  <link rel="canonical" href="https://gavinysj.github.io/2016/10/20/FLV封装格式简介/"/>
 
 
 
 
 
-  <title>Gavin's Blog</title>
+  <title>FLV封装格式简介 | Gavin's Blog</title>
   
 
 
@@ -161,9 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,9 +252,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -274,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/20/FLV封装格式简介/" itemprop="url">FLV封装格式简介</a></h1>
+          <h1 class="post-title" itemprop="name headline">FLV封装格式简介</h1>
         
 
         <div class="post-meta">
@@ -323,9 +327,7 @@
       
 
       
-        
-          
-            <p>FLV封装其特点在于支持实时观看，即无需下载整个文件，也可以通过接受视频中间的Tag数据来解析播放。<br>另外一个注意点: FLV中通过Tag区分不同的流，不像ts同一种类型支持多个流，FLV每种Tag最多存在一个流.<br>详细的文件格式介绍见下文:</p>
+        <p>FLV封装其特点在于支持实时观看，即无需下载整个文件，也可以通过接受视频中间的Tag数据来解析播放。<br>另外一个注意点: FLV中通过Tag区分不同的流，不像ts同一种类型支持多个流，FLV每种Tag最多存在一个流.<br>详细的文件格式介绍见下文:</p>
 <p>##FLV文件头格式</p>
 <ul>
 <li>如图</li>
@@ -507,20 +509,27 @@
 <li>[标准文档下载地址] <a href="http://download.macromedia.com/f4v/video_file_format_spec_v10_1.pdf" target="_blank" rel="external">http://download.macromedia.com/f4v/video_file_format_spec_v10_1.pdf</a></li>
 </ol>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -528,21 +537,22 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -550,6 +560,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -728,10 +742,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
